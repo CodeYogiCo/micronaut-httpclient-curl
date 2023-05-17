@@ -1,0 +1,61 @@
+[versions]
+
+junit="5.9.2"
+kotlin="1.8.0"
+micronaut="3.9.1"
+kotlinCoroutines="1.6.2"
+jackson="2.13.3"
+kotest = "5.5.4"
+
+
+
+[libraries]
+
+# boms
+junitBom= {module="org.junit:junit-bom", version.ref="junit"}
+jacksonBom={module="com.fasterxml.jackson:jackson-bom", version.ref="jackson"}
+micronautBom={module="io.micronaut:micronaut-bom", version.ref="micronaut"}
+
+
+micronautHttpClient={module="io.micronaut:micronaut-http-client"}
+micronautHttp={module="io.micronaut:micronaut-http"}
+micronautHttpServer={module="io.micronaut:micronaut-http-server"}
+micronautHttpServerNetty={module="io.micronaut:micronaut-http-server-netty"}
+micronautRuntime={module="io.micronaut:micronaut-runtime"}
+micronautManagement={module="io.micronaut:micronaut-management"}
+micronautInject={module="io.micronaut:micronaut-inject"}
+micronautInjectJava={module="io.micronaut:micronaut-inject-java"}
+micronautRouter={module="io.micronaut:micronaut-router"}
+micronautMicrometerCore={module="io.micronaut.micrometer:micronaut-micrometer-core"}
+micronautRxJava2={module="io.micronaut.rxjava2:micronaut-rxjava2"}
+micronautRxJava3={module="io.micronaut.rxjava3:micronaut-rxjava3"}
+micronautValidation={module="io.micronaut:micronaut-validation"}
+
+
+kotlinStdlib={module="org.jetbrains.kotlin:kotlin-stdlib-jdk8"}
+kotlinReflect={module="org.jetbrains.kotlin:kotlin-reflect"}
+
+micronautTestCore={module="io.micronaut.test:micronaut-test-core"}
+micronautTestJunit5={module="io.micronaut.test:micronaut-test-junit5"}
+micronautTestKotest={module="io.micronaut.test:micronaut-test-kotest5"}
+
+junitJupiterApi={module="org.junit.jupiter:junit-jupiter-api"}
+junitJupiterParams={module="org.junit.jupiter:junit-jupiter-params"}
+junitJupiterEngine={module="org.junit.jupiter:junit-jupiter-engine"}
+jacksonModuleKotlin={module="com.fasterxml.jackson.module:jackson-module-kotlin"}
+
+
+kotestAssertionsCore = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotestJunit5= { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotestProperty = { module = "io.kotest:kotest-property", version.ref = "kotest" }
+kotestExtensions = { module = "io.kotest:kotest-extensions", version.ref = "kotest" }
+
+
+
+[bundles]
+micronaut=["micronautHttpClient","micronautHttp","micronautHttpServer","micronautHttpServerNetty",
+    "micronautRuntime","micronautManagement","micronautInject","micronautRouter","micronautMicrometerCore","micronautRxJava2"]
+micronautTest=["micronautTestCore","micronautTestJunit5"]
+kotest=["kotestAssertionsCore","kotestJunit5","kotestProperty","kotestExtensions","micronautTestKotest"]
+
+
